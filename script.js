@@ -29,11 +29,11 @@ window.addEventListener('load', () => {
     let obj = [];
     let countId = 0;
 
-    let categories = (categorie, e) => {
+    let categories = (categorie, id) => {
       if (categorie.children.length !== 0) {
         for (var index = 0; index < categorie.children.length; index++) {
           const element = categorie.children[index];
-          if (e === element.id) {
+          if (id === element.id) {
             obj.push(element.id);
 
             var aux = element;
@@ -52,7 +52,7 @@ window.addEventListener('load', () => {
 
             countId = countAux;
           }
-          categories(element, e);
+          categories(element, id);
         }
       }
       return obj;
